@@ -5,22 +5,22 @@
 const expect = require('chai').expect;
 const BinarySearchTree = require('../src/5_bst.js');
 
-describe('Binary Search Tree Data Structures', () => {
+xdescribe('Binary Search Tree Data Structures', () => {
 
   let bst = null;
-  
+
   describe('Binary Search Tree: Adding, Removing and Traversing', () => {
 
     before(() => {
       bst = new BinarySearchTree(10);
     });
-  
+
     it('Binary Search Tree should have a value property, left property and right property pointing at null values', () => {
       expect(bst).to.have.a.property('value');
       expect(bst).to.have.a.property('left').to.be.null;
       expect(bst).to.have.a.property('right').to.be.null;
     });
-    
+
     it('Challenge 1: Insert should add a new value (subtree) to tree', () => {
       expect(bst.__proto__).to.have.property('insert').to.be.a('function');
       const treeValues = [5, 8, 1, 15, 13, 17];
@@ -77,7 +77,7 @@ describe('Binary Search Tree Data Structures', () => {
       const results = [];
       const callback = (value) => results.push(value);
       bst.postOrderTraverse(callback);
-      expect(results).to.have.ordered.members([1, 8, 5, 13, 17, 15, 10]); 
+      expect(results).to.have.ordered.members([1, 8, 5, 13, 17, 15, 10]);
     });
 
     it('Challenge 6: breadthTraversal() vists all nodes of the tree by level', () => {
@@ -85,10 +85,10 @@ describe('Binary Search Tree Data Structures', () => {
       const results = [];
       const callback = (value) => results.push(value);
       bst.postOrderTraverse(callback);
-      expect(results).to.have.ordered.members([10, 5, 15, 1, 8, 13, 17]); 
+      expect(results).to.have.ordered.members([10, 5, 15, 1, 8, 13, 17]);
     });
   });
-    
+
   xdescribe('Binary Search Trees Extension Methods', () => {
 
     before(() => {

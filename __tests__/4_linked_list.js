@@ -5,26 +5,26 @@
 const expect = require('chai').expect;
 const { LinkedList, Node } = require('../src/4_linked_list.js')
 
-describe('Linked List Structure', () => {
+xdescribe('Linked List Structure', () => {
   let ll = null;
-  
+
   describe('Linked List: Adding and Removing', () => {
     beforeEach(() => {
       ll = new LinkedList;
       node = new Node;
     });
-  
+
     it('Linked List should have a head pointer, tail pointer and a size default of 0', () => {
       expect(ll).to.have.a.property('head').to.be.null;
       expect(ll).to.have.a.property('tail').to.be.null;
       expect(ll).to.have.a.property('size').to.equal(0);
     });
-  
+
     it('Node should have a value property and a next property both set to null by default', () => {
       expect(node).to.have.a.property('value');
       expect(node).to.have.a.property('next').to.be.null;
     });
-    
+
     it('Challenge 1: Push should add single value to the end of the linked list', () => {
       expect(ll.__proto__).to.have.property('push').to.be.a('function');
       ll.push('A');
@@ -161,7 +161,7 @@ describe('Linked List Structure', () => {
       expect(ll.getByIndex(3)).to.equal(-1);
     });
   });
-    
+
   xdescribe('Linked List Extension Methods', () => {
 
     beforeEach(() => {
@@ -174,10 +174,10 @@ describe('Linked List Structure', () => {
       ll.push('B');
       ll.push('C');
       ll.push('D');
-      expect(ll.head.value).to.equal('A'); 
+      expect(ll.head.value).to.equal('A');
       expect(ll.removeByIndex(0)).to.equal('A');
       expect(ll.head.value).to.equal('B');
-      expect(ll.head.next.value).to.equal('C'); 
+      expect(ll.head.next.value).to.equal('C');
       expect(ll.size).to.equal(3);
       expect(ll.removeByIndex(1)).to.equal('C');
       expect(ll.head.next.value).to.equal('D');
@@ -204,7 +204,7 @@ describe('Linked List Structure', () => {
       ll.push('A');
       ll.push('B');
       ll.push('C');
-      expect(ll.toString()).to.be.a('string').to.equal('ABC'); 
+      expect(ll.toString()).to.be.a('string').to.equal('ABC');
     });
 
     it('Challenge 11: toArray returns an array representation of linked list', () => {
@@ -213,7 +213,7 @@ describe('Linked List Structure', () => {
       ll.push('A');
       ll.push('B');
       ll.push('C');
-      expect(ll.toArray()).to.have.ordered.members(['A', 'B', 'C']); 
+      expect(ll.toArray()).to.have.ordered.members(['A', 'B', 'C']);
     });
 
     it('Challenge 12: getHead retrieves the value from the first node of the list (head)', () => {

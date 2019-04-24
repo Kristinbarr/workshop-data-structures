@@ -2,16 +2,16 @@
  * @module  MyArray
  * @author  david-dest01
  * @date    03/23/19
- * @description Begin Erray (Array Data Structure) challenge below. 
+ * @description Begin Erray (Array Data Structure) challenge below.
  *              Details: For more information on Array, please review section ____ within the README
- *              Testing Your Code: 
+ *              Testing Your Code:
  *                - To test code, run npm test in terminal and complete everything under Array data structure
  *                - For extensions, remove 'x' before describe on line ___ in testing file then save.
  **********************************************************************************************************************************************/
 
-function MyArray () {
-  this.contents = {};
-  this.length = 0;
+function MyArray() {
+  this.contents = {}
+  this.length = 0
 }
 
 /* CHALLENGE 1
@@ -25,14 +25,23 @@ function MyArray () {
     - array after: { 0: 'A', 1: 'B' }
 
     BONUS - adding multiple values
-  * example 2 - multiple values: 
+  * example 2 - multiple values:
     - array before: { 0: 'A' }
     - input: push('B', 'C', 'D')
     - array after: { 0: 'A', 1: 'B', 2: 'C', 3: 'D' }
 */
-MyArray.prototype.push = function (value) {
-  // we have two properties, contents 
-};
+MyArray.prototype.push = function(value) {
+  // we have two properties, contents and length
+  // value can be a 'A' or multiple 'B','c','D'
+  // find highest key value number
+  // create a new property with highest value + 1
+  // set the value to that property as the value input
+
+  for (let key in arguments) {
+    this.contents[this.length] = arguments[key]
+    this.length += 1
+  }
+}
 
 /* CHALLENGE 2
   * method: pop
@@ -41,12 +50,21 @@ MyArray.prototype.push = function (value) {
     - updates length
   * example:
     - array before: { '0': 'A', '1': 'B', '2': 'C' }
-    - output: 
+    - output:
     - array before: { '0': 'A', '1': 'B' }
 */
-MyArray.prototype.pop = function () {
-  // insert code here
-};
+MyArray.prototype.pop = function() {
+  let tempObj = {}
+  let poppedEl = this.contents[this.length-1]
+  for (let key in this.contents) {
+    if (Number(key) < this.length-1) {
+      tempObj[key] = this.contents[key]
+    }
+  }
+  if (this.length > 0) this.length -= 1
+  this.contents = tempObj
+  return poppedEl
+}
 
 /* CHALLENGE 3
   * method: shift
@@ -59,14 +77,14 @@ MyArray.prototype.pop = function () {
     - array after: { 0: 'B', 1: 'A' }
 
     BONUS - adding multiple values
-  * example 2 - multiple values: 
+  * example 2 - multiple values:
     - array before: { 0: 'A' }
     - input: shift('B', 'C', 'D')
     - array after: { 0: 'B', 1: 'C', 2: 'D', 3: 'A' }
 */
-MyArray.prototype.shift = function (value) {
+MyArray.prototype.shift = function(value) {
   // insert code here
-};
+}
 
 /* CHALLENGE 4
   * method: unshift
@@ -77,10 +95,10 @@ MyArray.prototype.shift = function (value) {
     - array before: { 0: 'A',  1: 'B', 2: 'C' }
     - input: unshift()
     - array after: { 0: 'B', 1: 'C' }
-*/ 
-MyArray.prototype.unshift = function () {
+*/
+MyArray.prototype.unshift = function() {
   // insert code here
-};
+}
 
 /* CHALLENGE 5
   * method: indexOf
@@ -92,10 +110,10 @@ MyArray.prototype.unshift = function () {
   * example 2:
     - input: indexOf('D')
     - output: -1
-*/ 
-MyArray.prototype.indexOf = function (value) {
+*/
+MyArray.prototype.indexOf = function(value) {
   // insert code here
-};
+}
 
 /* CHALLENGE 6
   * method: lastIndexOf
@@ -107,11 +125,10 @@ MyArray.prototype.indexOf = function (value) {
   * example 2:
     - input: indexOf('D')
     - output: -1
-*/ 
-MyArray.prototype.lastIndexOf = function (value) {
+*/
+MyArray.prototype.lastIndexOf = function(value) {
   // insert code here
-};
+}
 
-
-/* please do not touch */ 
-module.exports = MyArray;
+/* please do not touch */
+module.exports = MyArray

@@ -4,7 +4,7 @@
 const expect = require('chai').expect;
 const MyArray = require('../src/1_array.js')
 
-xdescribe('MyArray (Erray) Data Structure', () => {
+describe('MyArray (Erray) Data Structure', () => {
   let array = null;
 
   describe('MyArray: Adding and Removing Elements', () => {
