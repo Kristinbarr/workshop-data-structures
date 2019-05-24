@@ -31,7 +31,7 @@ function MyArray() {
     - array after: { 0: 'A', 1: 'B', 2: 'C', 3: 'D' }
 */
 MyArray.prototype.push = function(value) {
-  
+
   for (let key in arguments) {
     this.contents[this.length] = arguments[key]
     this.length += 1
@@ -130,7 +130,16 @@ MyArray.prototype.unshift = function() {
     - output: -1
 */
 MyArray.prototype.indexOf = function(value) {
+  // iterate through contents
+  // if value matches current value of contents,
+  // return current key/index
 
+  for (let key in this.contents) {
+    if (value === this.contents[key]) {
+      return Number(key)
+    }
+  }
+  return -1
 }
 
 /* CHALLENGE 6
@@ -145,7 +154,20 @@ MyArray.prototype.indexOf = function(value) {
     - output: -1
 */
 MyArray.prototype.lastIndexOf = function(value) {
-  // insert code here
+  // variable for ending value
+  // iterate through contents
+    // if value matches current value,
+    // assign ending val to current val
+  // return ending val
+
+  let outputIndex = undefined
+  for (let key in this.contents) {
+    if (value === this.contents[key]) {
+      outputIndex = Number(key)
+    }
+  }
+  return outputIndex
+
 }
 
 /* please do not touch */
