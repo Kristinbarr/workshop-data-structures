@@ -67,9 +67,9 @@ describe('MyArray (Erray) Data Structure', () => {
       expect(array.__proto__).to.have.property('shift').to.be.a('function');
       array.shift('A');
       array.shift('B', 'C', 'D');
-      expect(array.contents['0']).to.equal('D');
+      expect(array.contents['0']).to.equal('B');
       expect(array.contents['1']).to.equal('C');
-      expect(array.contents['2']).to.equal('B');
+      expect(array.contents['2']).to.equal('D');
       expect(array.contents['3']).to.equal('A');
       expect(array.length).to.equal(4);
     });

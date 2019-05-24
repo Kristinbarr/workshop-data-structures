@@ -31,12 +31,7 @@ function MyArray() {
     - array after: { 0: 'A', 1: 'B', 2: 'C', 3: 'D' }
 */
 MyArray.prototype.push = function(value) {
-  // we have two properties, contents and length
-  // value can be a 'A' or multiple 'B','c','D'
-  // find highest key value number
-  // create a new property with highest value + 1
-  // set the value to that property as the value input
-
+  
   for (let key in arguments) {
     this.contents[this.length] = arguments[key]
     this.length += 1
@@ -55,9 +50,9 @@ MyArray.prototype.push = function(value) {
 */
 MyArray.prototype.pop = function() {
   let tempObj = {}
-  let poppedEl = this.contents[this.length-1]
+  let poppedEl = this.contents[this.length - 1]
   for (let key in this.contents) {
-    if (Number(key) < this.length-1) {
+    if (Number(key) < this.length - 1) {
       tempObj[key] = this.contents[key]
     }
   }
@@ -83,21 +78,44 @@ MyArray.prototype.pop = function() {
     - array after: { 0: 'B', 1: 'C', 2: 'D', 3: 'A' }
 */
 MyArray.prototype.shift = function(value) {
-  // insert code here
+  // Shift and unshift behaviors are backwards in this problem set
+
+  // There is a discrepancy with Example 2 and the test suite
+  // ex2 expects: { 0: 'B', 1: 'C', 2: 'D', 3: 'A' }
+  // test expects: { 0: 'D', 1: 'C', 2: 'B', 3: 'A' }
+
+  let tempObj = { ...arguments }
+  let argsLength = arguments.length
+
+  for (let key in this.contents) {
+    tempObj[argsLength] = this.contents[key]
+    argsLength += 1
+  }
+  this.length += arguments.length
+  this.contents = tempObj
 }
 
 /* CHALLENGE 4
-  * method: unshift
-  * description:
-    - removes the first element from the beginning of the Erray
-    - updates length
-  * example:
-    - array before: { 0: 'A',  1: 'B', 2: 'C' }
-    - input: unshift()
-    - array after: { 0: 'B', 1: 'C' }
+* method: unshift
+* description:
+- removes the first element from the beginning of the Erray
+- updates length
+* example:
+- array before: { 0: 'A',  1: 'B', 2: 'C' }
+- input: unshift()
+- array after: { 0: 'B', 1: 'C' }
 */
 MyArray.prototype.unshift = function() {
-  // insert code here
+  let tempObj = {}
+  let unshiftedEl = this.contents[0]
+  for (let key in this.contents) {
+    if (Number(key) > 0) {
+      tempObj[key - 1] = this.contents[key]
+    }
+  }
+  if (this.length > 0) this.length -= 1
+  this.contents = tempObj
+  return unshiftedEl
 }
 
 /* CHALLENGE 5
@@ -112,7 +130,7 @@ MyArray.prototype.unshift = function() {
     - output: -1
 */
 MyArray.prototype.indexOf = function(value) {
-  // insert code here
+
 }
 
 /* CHALLENGE 6
