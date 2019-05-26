@@ -2,21 +2,21 @@
  * @module  Stack
  * @author  david-dest01
  * @date    03/19/19
- * @description Begin Stack challenge below. 
+ * @description Begin Stack challenge below.
  *              Details: For more information on Stack, please review section ____ within the README
- *              Testing Your Code: 
+ *              Testing Your Code:
  *                - To test code, run npm test in terminal and complete everything under Stack data structure
  *                - For extensions, remove 'x' before describe on line 58 in testing file then save.
  **********************************************************************************************************************************************/
 
 function Stack() {
-  this.contents = {};
-  this.size = 0;
-};
+  this.contents = {}
+  this.size = 0
+}
 
 /* CHALLENGE 1
   * method: push
-  * description: 
+  * description:
     - push method should add one or more value(s) to top of stack + adjust length, does not return value
     - updates size
   * example 1 - single value:
@@ -25,18 +25,23 @@ function Stack() {
     - stack after: { '0': 'A', '1': 'B' }
 
     BONUS - adding multiple values
-  * example 2 - multiple values: 
+  * example 2 - multiple values:
     - stack before: { '0': 'A' }
     - input: push('B', 'C', 'D')
     - stack after: { '0': 'A', '1': 'B', '2': 'C', '3': 'D' }
 */
-Stack.prototype.push = function (...value) {
-  // insert code here
-};
+Stack.prototype.push = function(...value) {
+
+  for (let i = 0; i < value.length; i++) {
+    this.contents[this.size] = value[i]
+    this.size += 1
+  }
+
+}
 
 /* CHALLENGE 2
   * method: pop
-  * description: 
+  * description:
     - pop method should return value from top of stack, removing it + reducing length by one
     - updates size
   * example:
@@ -44,9 +49,33 @@ Stack.prototype.push = function (...value) {
     - output: 'C'
     - stack after: { '0': 'A', '1': 'B' }
 */
-Stack.prototype.pop = function () {
-  // insert code here
-};
+Stack.prototype.pop = function() {
+  // variable for poppedElem
+  // variable for tempObj
+  // if contents empty, poppedElem is undefined
+  // iterate through contents
+  // decrement size by one
+  // reassign contents to tempObj
+  // return poppedElem
+
+  let poppedElem = this.contents[this.size - 1]
+  let tempObj = {}
+
+  if (!this.size) {
+    poppedElem === undefined
+    return poppedElem
+  }
+
+  for (let key in this.contents) {
+    if (Number(key) < this.size-1) {
+      tempObj[key] = this.contents[key]
+    }
+  }
+
+  this.size -= 1
+  this.contents = tempObj
+  return poppedElem
+}
 
 /********************************************************************************************************************************/
 /*                                             BONUS - EXTENSION METHODS                                                        */
@@ -59,10 +88,9 @@ Stack.prototype.pop = function () {
     - stack: { '0': 'A', '1': 'B' }
     - output: 2
 */
-Stack.prototype.count = function () {
+Stack.prototype.count = function() {
   // insert code here
-};
-
+}
 
 /* CHALLENGE 4
   * method: clear
@@ -74,9 +102,9 @@ Stack.prototype.count = function () {
     - stack after: {}
     - length after: 0
 */
-Stack.prototype.clear = function () {
+Stack.prototype.clear = function() {
   // insert code here
-};
+}
 
 /* CHALLENGE 5
   * method: isEmpty
@@ -88,9 +116,9 @@ Stack.prototype.clear = function () {
     - stack: {}
     - output: true
 */
-Stack.prototype.isEmpty = function () {
+Stack.prototype.isEmpty = function() {
   // insert code here
-};
+}
 
 /* CHALLENGE 6
   * method: peek
@@ -100,9 +128,9 @@ Stack.prototype.isEmpty = function () {
     - output: 'C'
     - stack after: { '0': 'A', '1': 'B', '2': 'C' }
 */
-Stack.prototype.peek = function () {
+Stack.prototype.peek = function() {
   // insert code here
-};
+}
 
 /* CHALLENGE 7
   * method: toString
@@ -111,20 +139,20 @@ Stack.prototype.peek = function () {
     - stack: { '0': 'A', '1': 'B', '2': 'C' }
     - output: 'CBA'
 */
-Stack.prototype.toString = function () {
+Stack.prototype.toString = function() {
   // insert code here
-};
+}
 
 /* CHALLENGE 8
   * method: toArray
   * description: should return an array containing all values
   * example:
     - stack: { '0': 'A', '1': 'B', '2': 'C' }
-    - output: ['C', 'B', 'A'] 
+    - output: ['C', 'B', 'A']
 */
-Stack.prototype.toArray = function () {
+Stack.prototype.toArray = function() {
   // insert code here
-};
+}
 
 /* CHALLENGE 9
   * method: contains
@@ -138,10 +166,9 @@ Stack.prototype.toArray = function () {
     - input: contains('D');
     - output: false
 */
-Stack.prototype.contains = function (value) {
+Stack.prototype.contains = function(value) {
   // insert code here
-};
+}
 
-
-/* please do not touch */ 
-module.exports = Stack;
+/* please do not touch */
+module.exports = Stack

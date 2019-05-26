@@ -4,7 +4,7 @@
 const expect = require('chai').expect;
 const Stack = require('../src/2_stack.js')
 
-xdescribe('Stack Data Structure', () => {
+describe('Stack Data Structure', () => {
   let stack = null;
 
   describe('Stack: Pushing and Popping', () => {
@@ -21,7 +21,7 @@ xdescribe('Stack Data Structure', () => {
     it('Challenge 1: Push method should add a single value to the end of stack:', () => {
       expect(stack.__proto__).to.have.property('push').to.be.a('function');
       stack.push('A');
-      stack.push('B'); 
+      stack.push('B');
       stack.push('C');
       expect(stack.contents['0']).to.equal('A');
       expect(stack.contents['1']).to.equal('B');
@@ -62,7 +62,7 @@ xdescribe('Stack Data Structure', () => {
     });
 
     it('Challenge 3 - Count Method: Count method should return total values in stack', () => {
-      expect(stack.__proto__).to.have.property('count').to.be.a('function'); 
+      expect(stack.__proto__).to.have.property('count').to.be.a('function');
       stack.push('A');
       expect(stack.count()).to.equal(1);
       stack.push('B');
