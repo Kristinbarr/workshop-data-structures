@@ -121,6 +121,7 @@ Stack.prototype.clear = function() {
 */
 Stack.prototype.isEmpty = function() {
   return (this.size <= 0)
+  
 }
 
 /* CHALLENGE 6
