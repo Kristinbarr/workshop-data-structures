@@ -121,7 +121,6 @@ Stack.prototype.clear = function() {
 */
 Stack.prototype.isEmpty = function() {
   return (this.size <= 0)
-  
 }
 
 /* CHALLENGE 6
@@ -133,7 +132,7 @@ Stack.prototype.isEmpty = function() {
     - stack after: { '0': 'A', '1': 'B', '2': 'C' }
 */
 Stack.prototype.peek = function() {
-  // insert code here
+  return this.contents[this.size-1]
 }
 
 /* CHALLENGE 7
