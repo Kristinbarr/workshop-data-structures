@@ -120,7 +120,7 @@ Stack.prototype.clear = function() {
     - output: true
 */
 Stack.prototype.isEmpty = function() {
-  // insert code here
+  return (this.size <= 0)
 }
 
 /* CHALLENGE 6
