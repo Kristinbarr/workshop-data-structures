@@ -89,7 +89,9 @@ Stack.prototype.pop = function() {
     - output: 2
 */
 Stack.prototype.count = function() {
-  // insert code here
+
+  return Object.keys(this.contents).length
+  
 }
 
 /* CHALLENGE 4

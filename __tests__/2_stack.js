@@ -56,7 +56,7 @@ describe('Stack Data Structure', () => {
   });
 
   // EXTENSION TESTS - Remove 'x' before describe to activate
-  xdescribe('Stack: Extension Methods', () => {
+  describe('Stack: Extension Methods', () => {
     beforeEach(() => {
       stack = new Stack;;
     });
